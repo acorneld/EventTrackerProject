@@ -1,6 +1,7 @@
 package com.skilldistillery.controllers;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -35,6 +36,13 @@ public class DeveloperController {
 	List<Developer> listDevelopers(){
 		return devServ.allDevelopers();
 	}
+	
+	@GetMapping("developers/id/{developerId}")
+	public Optional<Developer> getDeveloper(@PathVariable int developerId, HttpServletResponse res) {
+		Optional<Developer> dev = devRepo.findById(developerId);
+		return dev;
+	}
+		
 	
 	@PostMapping("developers")
 	public Developer createDeveloper(@RequestBody Developer dev, HttpServletRequest req, HttpServletResponse res) {

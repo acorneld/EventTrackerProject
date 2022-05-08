@@ -74,8 +74,21 @@ public class Developer {
 
 	@Override
 	public String toString() {
-		return "Developer [id=" + id + ", name=" + name + ", active=" + active + ", caffeination=" + caffeination
-				+ ", anxiety=" + anxiety + ", productivity=" + productivity + "]";
+		StringBuilder builder = new StringBuilder();
+		builder.append("Developer [id=");
+		builder.append(id);
+		builder.append(", name=");
+		builder.append(name);
+		builder.append(", active=");
+		builder.append(active);
+		builder.append(", caffeination=");
+		builder.append(caffeination);
+		builder.append(", anxiety=");
+		builder.append(anxiety);
+		builder.append(", productivity=");
+		builder.append(productivity);
+		builder.append("]");
+		return builder.toString();
 	}
 
 	@Override
