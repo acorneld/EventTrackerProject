@@ -20,7 +20,6 @@ public class DeveloperServiceImpl implements DeveloperService {
 
 	@Override
 	public List<Developer> searchDevelopersByName(String name) {
-		name = "%" + name;
 		return devRepo.findByName(name);
 	}
 
