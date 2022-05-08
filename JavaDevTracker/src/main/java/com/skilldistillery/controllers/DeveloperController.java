@@ -53,7 +53,7 @@ public class DeveloperController {
 	
 	@DeleteMapping("developers/{developerId}")
 	public void deleteDeveloper(@PathVariable Integer developerId, HttpServletResponse res) {
-		if(devRepo.deleteById(developerId)) {
+		if(devServ.deleteDeveloperById(developerId)) {
 			res.setStatus(204);
 		}else {
 			res.setStatus(404);

@@ -2,8 +2,7 @@ package com.skilldistillery.services;
 
 import java.util.List;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +28,17 @@ public class DeveloperServiceImpl implements DeveloperService {
 	public List<Developer> allDevelopers() {
 		return devRepo.findAll();
 	}
+
+	@Override
+	public boolean deleteDeveloperById(Integer developerId) {
+		boolean deleted = false;
+		if(devRepo.existsById(developerId)) {
+			devRepo.deleteById(developerId);
+		deleted = true;
+		}
+		return deleted;
+	}
+		
 	
 	
 	
