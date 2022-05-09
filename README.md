@@ -65,16 +65,14 @@ Find Developer By Id can be easily tested with the following command in Postman 
 </li>
 <li>Create Developer
 
-      <p>  The following API path is used to create a new Developer<strong>http://localhost:8083/api/developers</strong> the name and Id are the only required (non-null) fields for the POST body in Postman</li></p>
+      <p>  The following API path is used to create a new Developer<strong>http://localhost:8083/api/developers</strong> the name and Id are the only required (non-null) fields for the POST body in Postman</li>
 
     <li>Update Developer
+      A similar path is used for Create Developer but the repo provides automagic and updates field if there is already a Developer created.</li>
 
 
-        A similar path is used for Create Developer but the repo provides automagic and updates field if there is already a Developer created.</li>
 
 
-
-</ul>
 <li>
 <strong>Delete A Developer</strong>  The following path can be added to Postman in order to delete a Developer Entity from the database by way of the API <strong>http://localhost:8083/api/developers/[ID here] </strong>
 </li>
