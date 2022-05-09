@@ -63,17 +63,13 @@ The Java Developer API uses Postman to verify the proper paths and is launched t
 <li>
 Find Developer By Id can be easily tested with the following command in Postman http://<strong>localhost:8083/api/developers/id/1</strong>
 </li>
+<li>Create Developer
+
+        The following API path is used to create a new Developer<strong>http://localhost:8083/api/developers</strong> the name and Id are the only required (non-null) fields for the POST body in Postman</li>
+
+    <li>Update Developer
 
 
-
-
-    <li>Create Developer</li>
-
-        <li>The following API path is used to create a new Developer<strong>http://localhost:8083/api/developers</strong> the name and Id are the only required (non-null) fields for the POST body in Postman </li>
-    s
-    <li>Update Developer</li>
-
-        <li>
         A similar path is used for Create Developer but the repo provides automagic and updates field if there is already a Developer created.</li>
 
 
