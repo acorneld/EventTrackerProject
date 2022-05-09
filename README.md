@@ -27,7 +27,7 @@
 
 ## About The Project
 
-<p>This is a Java Developer Application Programming Interface, with a database on the backend that allows the user to perform the following operations on a Team in the CSGOTeam Database.</p>
+<p>This is a Java Developer Application Programming Interface, with a database on the backend that allows the user to perform the following operations through an API and Postman.</p>
 <ol>
 <li><strong><em>C</em></strong>reate - Create a new Developer in the database with Postman </li>
 <br>
@@ -63,26 +63,26 @@ The Java Developer API uses Postman to verify the proper paths and is launched t
 <li>
 Find Developer By Id can be easily tested with the following command in Postman http://<strong>localhost:8083/api/developers/id/1</strong>
 </li>
-<ul>
-<li>All information for the requested team is then retrieved by way of the SpringMVC provided <strong>getTeam.do</strong> RequestMapping found in the <strong>TeamController.java</strong>  The user also has two other main screen options.
 
-  <ol>
+
+
+
     <li>Create Developer</li>
-      <ul>
+
         <li>The following API path is used to create a new Developer<strong>http://localhost:8083/api/developers</strong> the name and Id are the only required (non-null) fields for the POST body in Postman </li>
-      </ul>
+    s
     <li>Update Developer</li>
-      <ul>
+
         <li>
         A similar path is used for Create Developer but the repo provides automagic and updates field if there is already a Developer created.</li>
-        </ul>
-  </ol>
+
+
 
 </ul>
 <li>
 <strong>Delete A Developer</strong>  The following path can be added to Postman in order to delete a Developer Entity from the database by way of the API <strong>http://localhost:8083/api/developers/[ID here] </strong>
 </li>
-  
+
 </ol>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
