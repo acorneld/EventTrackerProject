@@ -67,9 +67,9 @@ Find Developer By Id can be easily tested with the following command in Postman 
 The following API path is used to create a new Developer<strong>http://localhost:8083/api/developers</strong> the name and Id are the only required (non-null) fields for the POST body in Postman
 </li>
 
-    <li><strong>Update Developer</strong>
+<li><strong>Update Developer</strong>
       A similar path is used for Create Developer but the repo provides automagic and updates field if there is already a Developer created.
-    </li>
+</li>
 
 
 
@@ -94,7 +94,7 @@ The following API path is used to create a new Developer<strong>http://localhost
 <li> E-mail: acorneld@gmail.com</li>
 </ul>
 
-Project Link: [JPACRUD Project](https://github.com/acorneld/JPACRUDProject)
+Project Link: [Event Tracker Project](https://github.com/acorneld/EventTrackerProject)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -102,7 +102,7 @@ Project Link: [JPACRUD Project](https://github.com/acorneld/JPACRUDProject)
 
 ## Acknowledgments
 
--   [Film Query App](https://github.com/acorneld/FilmQueryProject)
+
 -   [Stack Overflow](https://stackoverflow.com/)
 -   [W3 Schools](https://www.w3schools.com/)
 -   [Github - othneildrew](https://github.com/othneildrew/Best-README-Template)
