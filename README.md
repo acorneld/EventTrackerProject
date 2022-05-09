@@ -65,7 +65,7 @@ Find Developer By Id can be easily tested with the following command in Postman 
 </li>
 <li>Create Developer
 
-        The following API path is used to create a new Developer<strong>http://localhost:8083/api/developers</strong> the name and Id are the only required (non-null) fields for the POST body in Postman</li>
+      <p>  The following API path is used to create a new Developer<strong>http://localhost:8083/api/developers</strong> the name and Id are the only required (non-null) fields for the POST body in Postman</li></p>
 
     <li>Update Developer
 
