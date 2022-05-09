@@ -61,21 +61,18 @@ The Java Developer API uses Postman to verify the proper paths and is launched t
 </li>
 
 <li>
-Find Developer By Id can be easily tested with the following command in Postman http://<strong>localhost:8083/api/developers/id/1</strong>
+Find Developer By Id can be easily tested with the following GET command in Postman http://<strong>localhost:8083/api/developers/id/1</strong>
 </li>
 <li><strong>Create Developer</strong>
-The following API path is used to create a new Developer<strong>http://localhost:8083/api/developers</strong> the name and Id are the only required (non-null) fields for the POST body in Postman
+The following API path and POST command is used to create a new Developer <strong>http://localhost:8083/api/developers</strong> the name and Id are the only required (non-null) fields for the POST body in Postman
 </li>
 
 <li><strong>Update Developer</strong>
-      A similar path is used for Create Developer but the repo provides automagic and updates field if there is already a Developer created.
+      A similar path and POST command is used for Create Developer but the repo provides automagic and updates field if there is already a Developer created.
 </li>
 
-
-
-
 <li>
-<strong>Delete A Developer</strong>  The following path can be added to Postman in order to delete a Developer Entity from the database by way of the API <strong>http://localhost:8083/api/developers/[ID here] </strong>
+<strong>Delete A Developer</strong>  The following path and DELETE command can be added to Postman in order to delete a Developer Entity from the database by way of the API <strong>http://localhost:8083/api/developers/[ID here] </strong>
 </li>
 
 </ol>
