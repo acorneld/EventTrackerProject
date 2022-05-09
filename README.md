@@ -61,37 +61,28 @@ The Java Developer API uses Postman to verify the proper paths and is launched t
 </li>
 
 <li>
-<strong>Find Developer By Id</strong> enter <strong>findTeamById.html</strong> where the user is prompted for the Teamm Id they would like to retrieve from the database.
+Find Developer By Id can be easily tested with the following command in Postman http://<strong>localhost:8083/api/developers/id/1</strong>
 </li>
 <ul>
 <li>All information for the requested team is then retrieved by way of the SpringMVC provided <strong>getTeam.do</strong> RequestMapping found in the <strong>TeamController.java</strong>  The user also has two other main screen options.
 
   <ol>
-    <li>Delete Team</li>
+    <li>Create Developer</li>
       <ul>
-        <li>The selected team is removed from the database by way of the SpringMVC provided <strong>deleteTeamm.do</strong> RequestMapping found in the CSGOTeamController.java and user is returned to the aforementioned homepage at if the select the home button<strong>/WEB-INF/home.jsp</strong></li>
+        <li>The following API path is used to create a new Developer<strong>http://localhost:8083/api/developers</strong> the name and Id are the only required (non-null) fields for the POST body in Postman </li>
       </ul>
-    <li>Update Team</li>
+    <li>Update Developer</li>
       <ul>
         <li>
-        The selected team is displayed for editing through <strong>updateTeam.html</strong> with the current values shown</li>
-        <li>
-        User can then change all given fields to their preferred input and apply them to the database by way of the SpringMVC provided updateTeam.do RequestMapping found in the CSGOTeamController.java and then user is returned to the aforementioned homepage at <strong>/WEB-INF/home.jsp</strong>
-        </li>
-      </ul>
+        A similar path is used for Create Developer but the repo provides automagic and updates field if there is already a Developer created.</li>
+        </ul>
   </ol>
 
 </ul>
 <li>
-<strong>Add A Team</strong> navigates to <strong>addTeam.html</strong> where the user is prompted to enter the Team's Name, Rank, Coach, Average Age, and Star Player
+<strong>Delete A Developer</strong>  The following path can be added to Postman in order to delete a Developer Entity from the database by way of the API <strong>http://localhost:8083/api/developers/[ID here] </strong>
 </li>
-  <ul>
-    <li>
-    When user selects the Submit button all inputed fields are added to the database by way of the SpringMVC provided <strong>addTeam.do</strong> RequestMapping found in the <strong>CSGOTeamController.java</strong> and then user is given the option to click Home and  be returned to the aforementioned homepage at <strong>/WEB-INF/home.jsp</strong>
-    </li>
-
-
-  </ul>
+  
 </ol>
 
 <p align="right">(<a href="#top">back to top</a>)</p>

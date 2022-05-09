@@ -46,7 +46,6 @@ public class DeveloperController {
 	
 	@PostMapping("developers")
 	public Developer createDeveloper(@RequestBody Developer dev, HttpServletRequest req, HttpServletResponse res) {
-		
 		devRepo.saveAndFlush(dev);
 		return dev;
 	}
