@@ -62,7 +62,7 @@ function deleteDev(devId){
 		}
 	};
 	
-	xhr.send(JSON.stringify());
+	xhr.send();
 }
 
 function getDev(devId) {
@@ -128,6 +128,7 @@ function displayAllDevs(devs) {
 			let row = document.createElement('tr');
 			row.addEventListener('click', function(e){
 				displayDev(item);
+			
 			});
 		let name = document.createElement('td');
 		name.textContent = item.name;
@@ -168,6 +169,8 @@ function displayDev(dev){
 	ul.appendChild(anxiety); 
 	ul.appendChild(productivity); 
 	
+	let updateDiv = document.createElement('div');
+	
 	let deleteButton = document.createElement('button');
 	dataDiv.appendChild(deleteButton);
 	deleteButton.textContent = 'Delete';
@@ -178,30 +181,86 @@ function displayDev(dev){
 	
 	let updateButton = document.createElement('button');
 	dataDiv.appendChild(updateButton);
+	
 	updateButton.textContent = 'Update';
 	updateButton.addEventListener('click', function(e){
+		console.log(dev.name);
+		updateDiv.textContent = '';
 		let form = document.createElement('form');
-		dataDiv.appendChild(form);
+		
 		
 		let inputName = document.createElement('input');
-		input.value = 'Name';		
+		inputName.id = 'name';
+		inputName.value = dev.name;		
 		form.appendChild(inputName);
 		
 		let inputActive = document.createElement('input');
-		input.value = dev.active;		
+		
+		inputActive.value = dev.active;	
+		inputActive.id = 'active';	
 		form.appendChild(inputActive);
 		
 		let inputCaffeination = document.createElement('input');
-		input.value = dev.caffeination;		
+		inputCaffeination.id = 'caffeination';
+		inputCaffeination.value = dev.caffeination;		
 		form.appendChild(inputCaffeination);
 		
 		let inputAnxiety = document.createElement('input');
-		input.value = dev.anxiety;		
+		inputAnxiety.id = 'anxiety';
+		inputAnxiety.value = dev.anxiety;		
 		form.appendChild(inputAnxiety);
 		
 		let inputProductivity = document.createElement('input');
-		input.value = dev.productivity;		
+		inputProductivity.id = 'productivity';
+		inputProductivity.value = dev.productivity;		
 		form.appendChild(inputProductivity);
+		
+		let submitButton = document.createElement('button');
+		submitButton.type = 'button';
+		submitButton.textContent = 'Submit';
+		form.appendChild(submitButton);
+		updateDiv.appendChild(form);
+		dataDiv.appendChild(updateDiv);
+		console.log(dev.id);
+		submitButton.addEventListener('click', function(e){
+			console.log('in submit');
+			
+			
+			e.preventDefault();
+
+	 dev = {
+		id : dev.id,
+		name : form.name.value,
+		active : form.active.value,
+		caffeination : form.caffeination.value,
+		anxiety : form.anxiety.value,
+		productivity : form.productivity.value
+	};
+	
+  let xhr = new XMLHttpRequest();
+  xhr.open("PUT", 'api/developers/' + dev.id);
+
+  xhr.setRequestHeader("Content-type", "application/json");
+
+  xhr.onreadystatechange = function(){
+    if(xhr.readyState === 4 ){
+    if (xhr.status == 200 || xhr.status == 201) { // Ok or Created
+          let data = JSON.parse(xhr.responseText);
+            getAllDevs();
+        }
+        else {
+          console.error("PUT request failed.");
+				  console.error(xhr.status + ': ' + xhr.responseText);
+        }
+      }
+};
+    updateDiv.textContent = '';
+	xhr.send(JSON.stringify(dev));
+			
+			
+			
+		})
+		
 	});
 	
 	
