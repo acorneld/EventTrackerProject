@@ -27,7 +27,7 @@
 
 ## About The Project
 
-<p>This is a Java Developer Application Programming Interface, with a database on the backend that allows the user to perform the following operations through an API and Postman.</p>
+<p>This is a Java Developer Application Programming Interface, with a database on the backend that allows the user to perform the following operations through an API and Postman.  There is also a frontend in the works which allows the user to dynamically select, edit, and delete any of the Developers entries</p>
 <ol>
 <li><strong><em>C</em></strong>reate - Create a new Developer in the database with Postman </li>
 <br>
@@ -54,6 +54,10 @@
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## How It Works
+
+<p>
+  A stubbed out Front End is currently available where the user can choose to show all Devs, at which point they can click on the name of any of the Devs to display all of their information and be given the option to update or delete the Dev entry.  Deleting the Dev will remove both the div from the HTML as well as the from the database.
+</p>
 
 <ol>
 <li>
