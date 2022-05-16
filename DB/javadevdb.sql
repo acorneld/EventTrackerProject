@@ -23,6 +23,10 @@ DROP TABLE IF EXISTS `developer` ;
 CREATE TABLE IF NOT EXISTS `developer` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(500) NOT NULL,
+  `active` TINYINT NULL,
+  `caffeination` INT NULL,
+  `anxiety` INT NULL,
+  `productivity` INT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -42,7 +46,7 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `javadevdb`;
-INSERT INTO `developer` (`id`, `name`) VALUES (1, 'Drew');
+INSERT INTO `developer` (`id`, `name`, `active`, `caffeination`, `anxiety`, `productivity`) VALUES (1, 'Drew', true, 100, 50, 75);
 
 COMMIT;
 
