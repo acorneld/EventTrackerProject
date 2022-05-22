@@ -1,0 +1,54 @@
+<p>Home Works</p>
+
+<form>
+  <h3>Create New Developer Below</h3>
+
+  Name: <input type="text" name="name" [(ngModel)]="newDev.name"><br>
+  Active: <input type="checkbox" name="active" [(ngModel)]="newDev.active"><br>
+  Caffeination: <input type="number" name="caffeination" [(ngModel)]="newDev.caffeination"><br>
+  Anxiety: <input type="number" name="anxiety" [(ngModel)]="newDev.anxiety"><br>
+  Productivity: <input type="number" name="productivity" [(ngModel)]="newDev.productivity"><br>
+
+  <button (click)="createDev(newDev)">Submit</button>
+</form>
+
+
+<button (click)="display=!display">Show all</button>
+
+<div *ngIf="display">
+  <ul *ngFor="let dev of devs">
+    <li (click)="displayDev(dev)">{{dev.name}}</li>
+  </ul>
+</div>
+
+<div *ngIf="selected">
+  <form>
+
+    ID: <input type="number" name="id" [(ngModel)]="selected.id"><br>
+  Name: <input type="text" name="name" [(ngModel)]="selected.name"><br>
+  Active: <input type="checkbox" name="active" [(ngModel)]="selected.active"><br>
+  Caffeination: <input type="number" name="caffeination" [(ngModel)]="selected.caffeination"><br>
+  Anxiety: <input type="number" name="anxiety" [(ngModel)]="selected.anxiety"><br>
+  Productivity: <input type="number" name="productivity" [(ngModel)]="selected.productivity"><br>
+  </form>
+  <button (click)="setEditDev()">Update</button>
+  <button (click)="deleteDev(selected.id)">Delete</button>
+</div>
+
+<div *ngIf="editDev">
+
+  Name: <input type="text" name="name" [(ngModel)]="editDev.name"><br>
+  Active: <input type="checkbox" name="active" [(ngModel)]="editDev.active"><br>
+  Caffeination: <input type="number" name="caffeination" [(ngModel)]="editDev.caffeination"><br>
+  Anxiety: <input type="number" name="anxiety" [(ngModel)]="editDev.anxiety"><br>
+  Productivity: <input type="number" name="productivity" [(ngModel)]="editDev.productivity"><br>
+<button (click)="updateDev(editDev)">Submit</button>
+</div>
+
+
+
+
+
+
+
+
