@@ -22,6 +22,8 @@ export class HomeComponent implements OnInit {
 
   display: Boolean = false;
 
+  showComplete: boolean = false;
+
   ngOnInit(): void {
     this.loadDevelopers();
     this.displayAllDevs;

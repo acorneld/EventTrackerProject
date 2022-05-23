@@ -1,4 +1,18 @@
-<p>Home Works</p>
+
+<table>
+  <tbody>
+    <tr [ngClass]="dev.active === true ? 'true' : ''"*ngFor="let dev of devs | incomplete:showComplete">
+      <td class='task' (click)="displayDev(dev)">{{dev.name}}</td>
+      <td><input type="checkbox" (change)="updateDev(dev)" name="active" [(ngModel)]="dev.active" /></td>
+      <td>{{dev.active}}</td>
+      <td><button (click)="deleteDev(dev.id)">X</button></td>
+    </tr>
+  </tbody>
+</table>
+Show Completed? <input type="checkbox" name="showComplete" [(ngModel)]="showComplete"/>
+
+
+
 
 <form>
   <h3>Create New Developer Below</h3>
@@ -24,7 +38,7 @@
 <div *ngIf="selected">
   <form>
 
-    ID: <input type="number" name="id" [(ngModel)]="selected.id"><br>
+    ID: {{selected.id}}<br>
   Name: <input type="text" name="name" [(ngModel)]="selected.name"><br>
   Active: <input type="checkbox" name="active" [(ngModel)]="selected.active"><br>
   Caffeination: <input type="number" name="caffeination" [(ngModel)]="selected.caffeination"><br>
